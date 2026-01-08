@@ -1,0 +1,23 @@
+[package]
+name = "prediction-market-arbitrage-mvp"
+version = "0.1.0"
+edition = "2021"
+description = "MVP arbitrage bot for Kalshi & Polymarket prediction markets"
+authors = ["GitMVP"]
+license = "MIT"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+requwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1.0"
+futures-util = "0.3"
+
+[profile.release]
+opt-level = 3
